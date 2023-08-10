@@ -20,6 +20,8 @@ class Script(scripts.Script):
 
     def run(self, p, in_front, prompt_weight, use_deepbooru):
         prompt = ""
+        #store our prompt as an original
+        promptoriginal = p.prompt
         if use_deepbooru:
             prompt = deepbooru.model.tag(p.init_images[0])
         else:
@@ -34,4 +36,6 @@ class Script(scripts.Script):
             p.prompt = f"({prompt}:{prompt_weight}), {p.prompt}"
 
         print(f"Prompt: {p.prompt}")
+        #this line reverts the prompt back instead of concactonating over and over
+        p.prompt = promptoriginal
         return process_images(p)
