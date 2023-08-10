@@ -1,3 +1,9 @@
+This is a straight clone of https://github.com/Alvi-alvarez/sd-Img2img-batch-interrogator/tree/main
+
+Initially forked by me for bugfixes, I plan on adding conditionals to the booru (if prompt contains X, do Y, file lists, etc)
+
+---Original README.md---
+
 # Img2img batch interrogator for A1111
 script that runs the interrogator before processing each image
 
